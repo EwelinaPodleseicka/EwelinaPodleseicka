@@ -33,6 +33,80 @@ import java.util.Locale;
 //import java.util.Scanner;
 /*
 public class Main {
+
+                                    
+package labs;
+
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import java.util.Scanner;
+import java.util.stream.Stream;
+
+public class Lab02 {
+
+    public static void z1ObliczDelte() {
+        Scanner scanner = new Scanner(System.in);
+        int a, b, c;
+        System.out.println("Podaj a: ");
+        a = scanner.nextInt();
+        System.out.println("Podaj b: ");
+        b = scanner.nextInt();
+        System.out.println("Podaj c: ");
+        c = scanner.nextInt();
+
+        double delta = b * b - 4 * a * c;
+
+        if (delta > 0) {
+            double x1 = (-b - Math.sqrt(delta)) / (2 * a);
+            double x2 = (-b + Math.sqrt(delta)) / (2 * a);
+            System.out.println("Wynik x1= " + x1 + " A x2= " + x2);
+        } else if (delta == 0) {
+            double x0 = (-b) / (2.0 * a);
+            System.out.println("Wynik x0= " + x0);
+        } else {
+            System.out.println("Delta jest ujemna.");
+        }
+    }
+//lab0-3
+    public static void z3Max() {
+        Scanner scanner = new Scanner(System.in);
+        int x, y, z;
+        System.out.println("Podaj x: ");
+        x = scanner.nextInt();
+        System.out.println("Podaj y: ");
+        y = scanner.nextInt();
+        System.out.println("Podaj z: ");
+        z = scanner.nextInt();
+
+//        Stream // robimy strima
+//                .of(x, y, z) // z liczb
+//                .sorted() // sortuje od najmieszej do najwiekszej
+//                .forEach(System.out::println); // dla kazdej wartosci robie wypisanie na ekran
+
+        int o1, o2, o3;
+
+        o1 = Math.min(x, y);
+        o1 = Math.min(o1, z);
+
+        o3 = Math.max(x, y);
+        o3 = Math.max(o3, z);
+
+        if (o1 <= x && x <= o3) {
+            o2 = x;
+        } else if (o1 <= y && y <= o3) {
+            o2 = y;
+        } else {
+            o2 = z;
+        }
+
+        System.out.println("Kolejnosc: " + o1 + " " + o2 + " " + o3);
+    }
+
+}
+                                     
+                                     
+                                     
     public static void main(String[] args){
         zadanie2();
     }
