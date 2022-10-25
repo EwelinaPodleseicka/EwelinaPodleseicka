@@ -1,11 +1,122 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-    </content>
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-</module>
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+    }
+
+    public static void Definicja() {
+        double[] data; //definicja
+        data = new double[10]; //alokacja pamieci
+
+        double[] data1 = new double[10]; // inny sposob
+
+        String slowa[];
+        slowa = new String[]{"ala", "ma", "kota"};
+
+        int[] intLiczby = {1, 2, 3, 56, 7, 8, 56, 78, 89};
+        int[] Liczby = new int[4];
+        Liczby[0] = 23;
+        Liczby[1] = 34;
+        Liczby[2] = 45;
+
+        System.out.println("element 1" + intLiczby[0]);
+
+
+    }
+
+    /*public static void Definicje1(){
+        int [] inLiczby = new int[5];
+        double[] doubleLiczby = {3.4,6.7,8.99};
+        System.out.println("dlugosc tab int : " + doubleLiczby.lenght());
+        System.out.println("dlugosc tablicy double: " + doubleLiczby.length);
+    } /*
+
+     */
+
+    public static void SredniaArytmetyczna1(){
+
+        double[] ocenyUczniow = {5, 3, 4};
+        double suma = 0.0;
+        int iloscOcenUczniow = ocenyUczniow.length;
+
+        for (int i = 0; i < ocenyUczniow.length; i++) {
+            suma += ocenyUczniow[i];
+        }
+
+        // dzielimy zsumowaną tablicę przez ilość ocen uczniów w tablicy
+        double sredniaOcenUczniow = suma / iloscOcenUczniow;
+
+        System.out.println(sredniaOcenUczniow); // 4.0
+    }
+
+    public static void DrugaWartoscTablicy2(){
+        // parzysta liczba elementow
+        int[] parzysta = { 1, 10, 15, 0, 100, 20 };
+        // nieparzysta liczba elementow
+        int[] nieparzysta = { 5, 7, 9 };
+        for (int i = 0; i < parzysta.length; i += 2) {
+            System.out.print(parzysta[i] + ", ");
+        }
+        System.out.println(); // nowa linia
+        for (int i = 0; i < nieparzysta.length; i += 2) {
+            System.out.print(nieparzysta[i] + ", ");
+        }
+    }
+
+    public static void WielkieLitery3() {
+        String[] slowa = { "Ola", "lubi", "chodzic", "na", "spacer" };
+        for (String slowo : slowa) {
+            System.out.print(slowo.toUpperCase() + " ");
+        }
+    }
+
+
+    public static void OdwrotneSlowa4(){
+            String[] slowa = new String[5];
+            System.out.println("Podaj " + slowa.length + " slow:");
+            for (int i = 0; i < slowa.length; i++) {
+                System.out.print((i + 1) + " slowo: ");
+                slowa[i] = getString();
+            }
+            for (int i = slowa.length - 1; i >= 0; i--) {
+                for (int j = slowa[i].length() - 1; j >= 0; j--) {
+                    System.out.print(slowa[i].charAt(j));
+                }
+                System.out.println(); // nowa linia
+            }
+        }
+        public static String getString() {
+            return new Scanner(System.in).next();
+        }
+
+    public static void SortowanieLiczb5() {
+        int[] liczby = new int[8];
+        System.out.println("Podaj " + liczby.length + " liczb:");
+        // pobieramy liczby
+        for (int i = 0; i < liczby.length; i++) {
+            System.out.print((i + 1) + " liczba: ");
+            liczby[i] = getInt();
+        }
+       
+        for (int i = 1; i < liczby.length; i++) {
+            int aktualnaLiczba = liczby[i];
+            int j = i – 1;
+            while (j >= 0 && liczby[j] > aktualnaLiczba) {
+                // ...przesuwamy poprzedni element o jedno miejsce w prawo
+                liczby[j + 1] = liczby[j];
+                j--;
+            }
+            liczby[j + 1] = aktualnaLiczba;
+        }
+        System.out.println("Posortowane liczby:");
+        for (int x : liczby) {
+            System.out.print(x + ", ");
+        }
+    }
+    public static int getInt() {
+        return new Scanner(System.in).nextInt();
+    }
+
+
+}
