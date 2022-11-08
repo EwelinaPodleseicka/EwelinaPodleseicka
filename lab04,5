@@ -1,0 +1,31 @@
+import java.time.LocalDate;
+
+public class labolatorium08 {
+
+    class Budynek {
+        String nazwa;
+        int ilosc_pieter;
+        LocalDate data_budowy;
+
+        public Budynek(String nazwa, int ilosc_pieter, LocalDate data_budowy) {
+            this.nazwa = nazwa;
+            this.ilosc_pieter = ilosc_pieter;
+            this.data_budowy = data_budowy;
+        }
+
+        public void setNazwa(String nazwa) {
+            this.nazwa = nazwa;
+        }
+
+        public long getData_budowy() {
+            LocalDate stop = LocalDate.now();
+            long ilosc_lat = java.time.temporal.ChronoUnit.YEARS.between(data_budowy, stop);
+            return ilosc_lat;
+        }
+
+        public void getInfo() {
+            System.out.println("Nazwa budynku: " + nazwa);
+            System.out.println("ilośc pięter budynku: " + ilosc_pieter);
+            System.out.println("wiek budynku: " + getData_budowy() + " lat");
+        }
+    }
