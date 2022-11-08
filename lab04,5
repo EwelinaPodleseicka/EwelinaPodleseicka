@@ -29,3 +29,42 @@ public class labolatorium08 {
             System.out.println("wiek budynku: " + getData_budowy() + " lat");
         }
     }
+    
+    
+    
+package gatunki;
+ 
+public class Gatunek {
+    String rodzaj;
+    String gatunek;
+    int liczba2n;
+    int x;
+    String opis;
+    
+    public String podajPelnaNazwe() {
+        return rodzaj + " " + gatunek;
+    }
+    
+    public int podajHaploidalnaLiczbeChromosomow() {
+        return liczba2n/2;
+    }
+    
+    public void wypiszDane() {
+        System.out.println("Rodzaj:          " + rodzaj);
+        System.out.println("Nazwa gatunkowa: " + gatunek);
+        System.out.println("2n:              " + liczba2n);
+        System.out.println("x:               " + x);
+        System.out.println("n:               " + podajHaploidalnaLiczbeChromosomow());
+        System.out.println("Opis:            " + opis); 
+    }
+    
+    public Gatunek klonuj() {
+        Gatunek klon = new Gatunek();
+        klon.rodzaj = rodzaj;
+        klon.gatunek = gatunek;
+        klon.liczba2n = liczba2n;
+        klon.x = x;
+        klon.opis = opis;       
+        return klon;
+    }
+}
